@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: Maciej Małecki <me@mmalecki.com>
+  description: Install linux-ftools
+  min_ansible_version: 1.4
+  version: 1.0.0
+  license: ISC
+  platforms:
+    - name: Ubuntu
+      versions:
+      - precise
+      - trusty
+  categories:
+    - debugging
+dependencies: []

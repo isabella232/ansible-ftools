@@ -1,0 +1,22 @@
+- name: install ftools' build-time dependencies
+  sudo: true
+  apt: pkg={{item}} state=present force=true update_cache=yes
+  with_items:
+    - mercurial
+    - build-essential
+
+- name: clone the repository
+  hg: >
+    dest={{ftools_directory}}
+    force=yes
+    repo={{ftools_repo}}
+
+- name: configure ftools
+  shell: ./configure --prefix={{ftools_prefix}} chdir={{ftools_directory}}
+
+- name: make ftools
+  shell: make chdir={{ftools_directory}}
+
+- name: install ftools
+  sudo: true
+  shell: make install chdir={{ftools_directory}}

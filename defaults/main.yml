@@ -1,0 +1,3 @@
+ftools_directory: /tmp/ftools
+ftools_repo: https://code.google.com/p/linux-ftools
+ftools_prefix: /usr/local
